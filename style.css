@@ -1,7 +1,4 @@
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-/* Reset simple */
+/* ==== RESET DE BASE ==== */
 * {
   margin: 0;
   padding: 0;
@@ -9,17 +6,25 @@
 }
 
 body {
-  font-family: "Poppins", Arial, sans-serif;
-  background: #f9f9f9;
-  color: #333;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #222;
+  background: #f9fafc;
   line-height: 1.6;
 }
 
-/* HEADER */
+/* ==== CONTAINERS ==== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==== HEADER ==== */
 .site-header {
-  background: white;
-  border-bottom: 1px solid #eee;
-  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #1b4965, #247ba0); /* dégradé bleu élégant */
+  padding: 15px 0;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -27,10 +32,8 @@ body {
 
 .header-inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
+  justify-content: space-between;
 }
 
 .brand {
@@ -39,73 +42,72 @@ body {
   gap: 12px;
 }
 
-.brand .logo img {
-  height: 60px;
+.brand img {
+  height: 55px;
+  width: auto;
   border-radius: 8px;
 }
 
 .brand-text h1 {
-  margin: 0;
-  font-size: 1.8rem;
-  color: #14532d;
+  font-size: 1.5rem;
   font-weight: 700;
+  margin: 0;
 }
 
 .brand-text .tag {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #666;
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
-/* NAVIGATION */
+/* ==== NAV ==== */
+.main-nav {
+  display: flex;
+  gap: 20px;
+}
+
 .main-nav .nav-link {
-  margin-left: 20px;
+  color: #fff;
   text-decoration: none;
-  color: #333;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: opacity 0.2s;
 }
 
 .main-nav .nav-link:hover {
-  color: #14532d;
+  opacity: 0.8;
 }
 
 .main-nav .cta {
-  padding: 8px 16px;
-  border: 1px solid #14532d;
-  border-radius: 6px;
-  margin-left: 20px;
-  background: #14532d;
-  color: white !important;
+  background: #2ecc71; /* vert moderne */
+  padding: 6px 14px;
+  border-radius: 20px;
   font-weight: 600;
+  transition: background 0.3s;
 }
 
 .main-nav .cta:hover {
-  background: #c5a880;
-  border-color: #c5a880;
-  color: white !important;
+  background: #27ae60;
 }
 
-/* HERO */
+/* ==== HERO ==== */
 .hero {
-  background: linear-gradient(to right, #14532d, #0d2818);
-  color: white;
-  padding: 120px 20px;
+  background: linear-gradient(135deg, #1b4965, #62b6cb); /* bleu océan + turquoise */
+  color: #fff;
+  padding: 100px 20px;
   text-align: center;
 }
 
 .hero h2 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+  text-shadow: 0px 2px 6px rgba(0,0,0,0.25);
 }
 
-.hero p {
-  font-size: 1.3rem;
+.hero p.lead {
+  font-size: 1.25rem;
   max-width: 700px;
   margin: 0 auto 30px;
-  color: #e5e5e5;
+  color: #eaf7ee;
 }
 
 .cta-row {
@@ -116,103 +118,113 @@ body {
   display: inline-block;
   padding: 12px 24px;
   border-radius: 30px;
-  text-decoration: none;
-  transition: background 0.3s, color 0.3s;
   font-weight: 600;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: all 0.3s;
 }
 
 .btn.primary {
-  background: #c5a880;
-  color: white;
+  background: #2ecc71;
+  color: #fff;
 }
 
 .btn.primary:hover {
-  background: #14532d;
+  background: #27ae60;
 }
 
 .btn.link {
   background: transparent;
-  color: white;
-  border: 2px solid white;
-  margin-left: 10px;
+  border: 2px solid #fff;
+  color: #fff;
 }
 
 .btn.link:hover {
-  background: white;
-  color: #14532d;
+  background: rgba(255,255,255,0.1);
 }
 
-/* SECTIONS GÉNÉRALES */
+/* ==== SECTIONS ==== */
 .section {
   padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
+  text-align: center;
 }
 
 .section.alt {
-  background: #f0f0f0;
+  background: #f0f6fa;
 }
 
 .section h3 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 50px;
-  color: #14532d;
-  font-weight: 700;
+  font-size: 2rem;
+  color: #1b4965;
+  margin-bottom: 20px;
 }
 
-/* CARTES (features & produits) */
-.features, .product-grid {
+.section p.lead {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+/* ==== FEATURES ==== */
+.features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  list-style: none;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
 }
 
-.feature, .product-grid li {
-  background: white;
-  border-radius: 12px;
+.feature {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
 }
 
-.feature:hover, .product-grid li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.feature h4, .product-grid strong {
-  font-size: 1.2rem;
-  color: #14532d;
+.feature h4 {
+  color: #247ba0;
   margin-bottom: 10px;
 }
 
-/* CONTACT */
-.contact {
-  text-align: center;
-  font-size: 1.1rem;
-  background: #eef5f0;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+/* ==== PRODUCTS ==== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
 }
 
+.product-grid li {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.product-grid strong {
+  display: block;
+  color: #1b4965;
+  margin-bottom: 8px;
+}
+
+/* ==== CONTACT ==== */
 .contact a {
-  color: #14532d;
-  text-decoration: none;
+  color: #247ba0;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .contact a:hover {
   text-decoration: underline;
 }
 
-/* FOOTER */
+/* ==== FOOTER ==== */
 .site-footer {
+  background: #1b4965;
+  color: #fff;
   text-align: center;
-  padding: 30px;
-  background: #14532d;
-  color: white;
-  margin-top: 40px;
+  padding: 20px;
+  font-size: 0.9rem;
 }
